@@ -1,1 +1,5 @@
 res://src/Game/game.tscn
+res://src/Entities/entity_definition.gd
+res://src/Entities/entity.gd
+res://src/Utils/grid.gd
+res://assets/definitions/actors/entity_definition_player.tres
