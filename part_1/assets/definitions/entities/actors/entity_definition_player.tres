@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=9 format=3 uid="uid://3kkeyi2aj5ew"]
+
+[ext_resource type="Texture2D" uid="uid://bply22cw2uwwh" path="res://assets/resources/default_death_texture.tres" id="1_eqybp"]
+[ext_resource type="Script" uid="uid://cwwrrmnbfnqm6" path="res://src/Entities/entity_definition.gd" id="1_m3m56"]
+[ext_resource type="Script" uid="uid://cld2lsw561bco" path="res://src/Entities/Actors/Components/Component Definitions/fighter_component_definition.gd" id="1_qkhq4"]
+[ext_resource type="Texture2D" uid="uid://h7i8uiwlysq2" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_u0axm"]
+[ext_resource type="Script" uid="uid://ddf6oxnqavdkk" path="res://src/Entities/Actors/Components/Component Definitions/level_component_definition.gd" id="3_iqfcy"]
+
+[sub_resource type="Resource" id="Resource_eqybp"]
+script = ExtResource("1_qkhq4")
+max_hp = 30
+power = 5
+defense = 2
+death_texture = ExtResource("1_eqybp")
+death_color = Color(0.545098, 0, 0, 1)
+metadata/_custom_type_script = "uid://cld2lsw561bco"
+
+[sub_resource type="Resource" id="Resource_b0myl"]
+script = ExtResource("3_iqfcy")
+level_up_base = 200
+level_up_factor = 150
+xp_given = 0
+metadata/_custom_type_script = "uid://ddf6oxnqavdkk"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsoc5"]
+atlas = ExtResource("2_u0axm")
+region = Rect2(416, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_m3m56")
+name = "Player"
+texture = SubResource("AtlasTexture_qsoc5")
+color = Color(1, 1, 1, 1)
+is_blocking_movment = true
+type = 2
+fighter_definition = SubResource("Resource_eqybp")
+ai_type = 1
+inventory_capacity = 26
+level_info = SubResource("Resource_b0myl")
+has_equipment = true
+metadata/_custom_type_script = "uid://cwwrrmnbfnqm6"
